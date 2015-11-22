@@ -1,8 +1,9 @@
+<?php 
+/*
+    Template Name: Portfolio Page
+*/
+?>
 <?php get_header();?>
-
-
-
-
 
 <section class="row">
       <div class="small-12 columns text-center">
