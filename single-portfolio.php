@@ -1,21 +1,39 @@
 <?php get_header();?>
 
+<section class="two-column row no-max pad">
+      <div class="small-12 columns">
+        <div class="row">
 
+          <!-- Primary Column -->
 
+          <div class="small-12 medium-7 medium-offset-1 medium-push-4 columns">
+            <div class="primary">
+              <article class="post">
 
+            <?php if (have_posts()) : while (have_posts()) : the_post ();?>
 
-<section class="row">
-      <div class="small-12 columns text-center">
-      <!--we could also use WP_Query() for more precise loop-->
-       <?php if (have_posts()) : while (have_posts()) : the_post ();?>
-        <div class="leader">
-          <p>single-portfolio</p>
-          <a href="<?php the_permalink();?>"><?php the_title('<h1>', '</h1>');?></a>
-          <?php the_content();?>    <!-- default <p> tags around the_content()-->  
+                <?php the_field("images");?>
+              <?php the_content();?>     
+            <?php endwhile; else : ?>
+            
+             <p>Oops! Looks like you have no posts yet!</p>
+             
+             <?php endif; ?>
+             
+              </article>
+            </div>
+          </div>
+
+          <!-- Secondary Column -->
+          <div class="small-12 medium-4 medium-pull-8 columns">
+            <div class="secondary">
+               <h2><a class="current" href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
+                <p><?php the_field( "description" );?></p>
+
+            </div>
+          </div>
+
         </div>
-        <?php endwhile; else : ?>
-          <p>Looks like you don't have any posts yet!</p>
-          <?php endif; wp_reset_postdata();?>
       </div>
     </section>
 
