@@ -1,5 +1,10 @@
 <?php 
 
+//add support for widgets
+//inclue functions-widgets.php
+get_template_part ('functions', 'widgets');
+
+
 //set excerpt length 
 function wpt_excerpt_length ($length) {
     return 20;
@@ -7,9 +12,11 @@ function wpt_excerpt_length ($length) {
 
 add_filter ( "excerpt_length" , "wpt_excerpt_length" );
 
-//require menu-functions.php 
-//@require '/menu-functions.php';
-get_template_part('menu', 'functions');
+//require functions-menu.php 
+//@require '/functions-menu.php';
+get_template_part('functions', 'menu');
+
+
 
 //include all necessary script files in script-files.php
 get_template_part('script', 'files');

@@ -3,8 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><?php wp_title('|', true, 'right');?></title>
-        <?php wp_head();?>
+
+    <?php if (is_front_page () ) : ?>
+
+    <title><?php  _e ('Hi there, Welcome!'); wp_title('|', true, 'left'); ?></title>
+
+    <?php else : ?>
+
+    <title><?php wp_title('|', true, 'right'); echo bloginfo ('name'); ?></title>
+    
+    <?php endif;?>
+    
+    
+    <?php wp_head();?>
+
     </head>
 
   <body <?php body_class();?>>

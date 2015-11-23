@@ -58,13 +58,12 @@ $Pdate = get_post_time ('j');
           </div>
 
           <!-- Secondary Column -->
-          <div class="small-12 medium-4 medium-pull-8 columns">
-            <div class="secondary">
-                <h3>Sidebar</h3>
-                <p>May be this area can be widgetized!</p>
+        <!-- Secondary Column -->
+          <!--include sidebar-->
+          <?php get_sidebar ();?>
+          <!--Place for sidebar -->
+          <!--Sidebar moved to different file-->
 
-            </div>
-          </div>
 
         </div>
       </div>

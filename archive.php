@@ -48,14 +48,10 @@ $excOutput = strip_tags ( $excerpt );
           </div>
 
           <!-- Secondary Column -->
-          <div class="small-12 medium-4 medium-pull-8 columns">
-            <div class="secondary">
-                <h3>Sidebar</h3>
-                <p>May be this area can be widgetized!</p>
-                <h3>Archive Widgets <br> Here</h3>
-
-            </div>
-          </div>
+          <!--include sidebar-->
+          <?php get_sidebar ('archive');?>
+          <!--Place for sidebar -->
+          <!--Sidebar moved to different file-->
 
         </div>
       </div>

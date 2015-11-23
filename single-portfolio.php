@@ -9,7 +9,6 @@
           <div class="small-12 medium-7 medium-offset-1 medium-push-4 columns">
             <div class="primary">
               <article class="post">
-
             <?php if (have_posts()) : while (have_posts()) : the_post ();?>
 
                 <?php if (get_field ("images") ) : ;?>
@@ -27,15 +26,13 @@
           </div>
 
           <!-- Secondary Column -->
-          <div class="small-12 medium-4 medium-pull-8 columns">
-            <div class="secondary">
-               <h2><a class="current" href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
-                <?php if (get_field ("description") ) : ;?>
-                <p><?php the_field("description");?></p>
-                <?php endif;?>
+          <!--include sidebar-->
+          <?php get_sidebar ('singleportfolio');?>
 
-            </div>
-          </div>
+          <!--Place for sidebar -->
+          <!--Sidebar moved to different file-->
+          
+
 
         </div>
       </div>

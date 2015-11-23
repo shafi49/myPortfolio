@@ -1,19 +1,23 @@
 <?php 
 //number of posts 
-$numb_post;
-if (is_front_page ($numb_post) ) {
-    //show only 4 items on home page
-    $numb_post = 4;
+$numb_post = -1;
+
+/*
+if (is_front_page() ) {
+    $numb_post = 5;
 } else {
-    //show all items on home page
-    
     $numb_post = -1;
 }
+*/
+
+$numb_post = (is_front_page () ) ? 4 : -1;
+//if it is static front-page then show 4 items
+//if it is not static front-page then show all items
 
 //args for WP_Query () class
 $args = array (
     'post_type' => 'portfolio',
-    'posts_per_page' => $numb_pos
+    'posts_per_page' => $numb_post
 );
 //initiate $query object from WP_Query() class
 $query = new WP_Query($args);

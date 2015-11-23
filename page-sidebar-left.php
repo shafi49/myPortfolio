@@ -31,12 +31,11 @@
           </div>
 
           <!-- Secondary Column -->
-          <div class="small-12 medium-4 medium-pull-8 columns">
-            <div class="secondary">
-                <h3>Sidebar</h3>
+          <!--include sidebar-->
+          <?php get_sidebar ();?>
+          <!--Place for sidebar -->
+          <!--Sidebar moved to different file-->
 
-            </div>
-          </div>
 
         </div>
       </div>
