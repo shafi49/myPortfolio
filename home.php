@@ -10,8 +10,7 @@
           <div class="small-12 medium-7 medium-offset-1 medium-push-4 columns">
             <div class="primary">
               <article class="post">
-                  <p>using single.php</p>
-                  
+                  <p>using home.php</p>
             <?php if (have_posts()) : while (have_posts()) : the_post ();?>
 
                 <h1>
@@ -22,7 +21,6 @@
 $excerpt = get_the_excerpt ();
 $excOutput = strip_tags ( $excerpt );
 ?>    
-
               <h2><?php  _e( $excerpt );?></h2>
               <ul class="post-meta no-bullet">
                   <li class="author">
@@ -33,17 +31,22 @@ $excOutput = strip_tags ( $excerpt );
                           by <?php the_author_posts_link (); ?>
                           
                   </li>
+                  
                   <li class="cat">in <?php the_category (','); ?></li>
+
+<?php
+$Pyear = get_post_time ('Y');
+$Pmonth = get_post_time ('m');
+$Pdate = get_post_time ('j');
+?>
+
+                  <li class="cat">in <a href="<?php _e ( get_day_link($Pyear, $Pmonth, $Pdate) ); ?>"><?php the_time ('F j', 'Y');?></a></li>
+<!-- OUTPUT  -> " by munia  in Uncategorized in November 23 " -->
                 </ul>
                 <div class="img-container">
-                 
                   <?php the_post_thumbnail ();?>
-                  
                   <p>Photo by Gratt Spore</p>
                 </div>
-                
-                <?php the_content (); ?>
-                
             <?php endwhile; else : ?>
             
              <p>Oops! Looks like you have no posts yet!</p>
@@ -51,9 +54,6 @@ $excOutput = strip_tags ( $excerpt );
              <?php endif; ?>
              
               </article>
-              
-              <?php comments_template (); ?>
-              
             </div>
           </div>
 
@@ -62,9 +62,6 @@ $excOutput = strip_tags ( $excerpt );
             <div class="secondary">
                 <h3>Sidebar</h3>
                 <p>May be this area can be widgetized!</p>
-                
-                <?php next_post_link ( '<p>%link</p>', 'Next Article'); ?>
-                <?php previous_post_link ( '<p>%link</p>', 'Previous Article'); ?>
 
             </div>
           </div>

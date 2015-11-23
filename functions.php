@@ -1,4 +1,12 @@
 <?php 
+
+//set excerpt length 
+function wpt_excerpt_length ($length) {
+    return 20;
+}
+
+add_filter ( "excerpt_length" , "wpt_excerpt_length" );
+
 //require menu-functions.php 
 //@require '/menu-functions.php';
 get_template_part('menu', 'functions');
