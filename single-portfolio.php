@@ -2,12 +2,29 @@
 
 <?php 
 //args for WP_Query();
+/*
 $args = array (
-    'post_type' => 'portfolio'
-
+    'post_type' => 'portfolio',
+    'posts_per_page' => 1
 );
 
 $query = new WP_Query($args);
+*/
+/*
+**************************
+WP_Query is not needed
+Wp will automatically select
+'portfolio' post type for us 
+**************************
+*/
+
+/*
+**************************
+single-portfolio.php file is
+automatically used for displaying
+'portfolio' post type
+**************************
+*/
 
 ?>
 
@@ -15,8 +32,7 @@ $query = new WP_Query($args);
       <div class="small-12 columns">
         <div class="row">
 
-        <?php if ($query -> have_posts()) : while ($query -> have_posts()) : the_post();?>
-
+        <?php if (have_posts()) : while (have_posts()) : the_post();?>
           <div class="small-12 medium-4 columns">
             <div class="secondary">
               <h2><?php the_title();?></h2>
