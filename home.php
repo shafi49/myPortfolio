@@ -40,7 +40,7 @@ $Pmonth = get_post_time ('m');
 $Pdate = get_post_time ('j');
 ?>
 
-                  <li class="cat">in <a href="<?php _e ( get_day_link($Pyear, $Pmonth, $Pdate) ); ?>"><?php the_time ('F j', 'Y');?></a></li>
+                  <li class="cat">in <a href="<?php _e ( get_day_link($Pyear, $Pmonth, $Pdate) ); ?>"><?php the_time ('F j, Y');?></a></li>
 <!-- OUTPUT  -> " by munia  in Uncategorized in November 23 " -->
                 </ul>
                 <div class="img-container">
